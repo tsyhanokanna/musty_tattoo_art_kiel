@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musty Tattoo Art</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Imbue:ital,wght@0,400;0,500&family=Agdasima&display=swap" rel="stylesheet">
+</head>
+<body class="home">
+  <div class="container">
+    <header>
+      <img src="Logo.png" alt="Logo" class="logo" width="354" height="209" />
+      <nav>
+        <button onclick="navigate('home')">Home</button>
+        <button onclick="navigate('tattoo')">Tattoo Stile</button>
+        <button onclick="navigate('galerie')">Galerie</button>
+        <button class="termin" onclick="navigate('termin')">Termin Buchen</button>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="intro">
+        <h1><span class="imbue">Exklusive</span><br>
+        <span class="kunst">Tattoo-Kunst</span><br>
+        <span class="auf">auf</span><span class="niveau"> hohem Niveau</span></h1>
+        <img src="Seite1Bild1.jpg" alt="Tattoo" class="tattoo-image" width="520" height="346" />
+        <p class="seit">Seit 2014</p>
+        <p class="description">Jede Linie, jede Schattierung ? ein handgefertigter Ausdruck von Stil, Charakter und Seele.</p>
+      </section>
+    </main>
+
+    <main id="tattoo" style="display:none">
+      <section class="tattoo-stile">
+        <h2>Tattoo Stile</h2>
+        <div class="styles">
+          <div class="style-box">
+            <h3>Linework (Fine Line)</h3>
+            <hr>
+            <img src="Linework_tattooStile.jpg" alt="Linework" width="238" height="333" />
+          </div>
+          <div class="style-box">
+            <h3>Traditional</h3>
+            <hr>
+            <img src="Traditionel_tattoostile.png" alt="Traditional" width="238" height="333" />
+          </div>
+          <div class="style-box">
+            <h3>Black & Grey</h3>
+            <hr>
+            <img src="Black_tattooStile.jpg" alt="Black & Grey" width="238" height="333" />
+          </div>
+          <div class="style-box">
+            <h3>Dotwork</h3>
+            <hr>
+            <img src="Dotwork_tattooStile.jpg" alt="Dotwork" width="238" height="333" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main id="galerie" style="display:none">
+      <section class="galerie">
+        <h2>Galerie</h2>
+        <div class="galerie-boxes">
+          <div class="galerie-item"><img src="Galerie1.png" width="213" height="239" /></div>
+          <div class="galerie-item"><img src="Galerie3.png" width="213" height="239" /></div>
+          <div class="galerie-item"><img src="Galerie2.jpeg" width="213" height="239" /></div>
+          <div class="galerie-item"><img src="Galerie4.png" width="213" height="239" /></div>
+        </div>
+      </section>
+    </main>
+
+    <main id="termin" style="display:none">
+      <section class="termin-section">
+        <h2>Lassen Sie Ihre Vision Von Meisterhand Auf Der Haut Verewigen ? <span class="highlight">Jetzt Termin Sichern.</span></h2>
+        <button class="termin-buchen">Termin Buchen</button>
+        <img src="Seite4.jpg" width="432" height="648" class="right-image" />
+        <div class="kontakt">
+          <p>Folge Uns!</p>
+          <div class="social">
+            <img src="Insta.png" width="36" height="36" /><span>@Musty_tattoo_art</span>
+            <img src="WhatsApp.png" width="36" height="36" /><span>016 085 355 20</span>
+          </div>
+          <address>
+            Adresse:<br>
+            Oldenburger Stra?e 9<br>
+            24143, Kiel
+          </address>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function navigate(section) {
+      document.querySelectorAll('main').forEach(el => el.style.display = 'none');
+      document.getElementById(section).style.display = 'block';
+    }
+  </script>
+</body>
+</html>
