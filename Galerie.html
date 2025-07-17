@@ -1,157 +1,129 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galerie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Imbue&family=Agdasima&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Galerie</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      margin: 10px;
       background-color: #FAFBEA;
-      font-family: 'HelveticaNeueCyr', sans-serif;
+      font-family: HelveticaNeueCyr, sans-serif;
     }
-
-    .container {
-      padding: 24px;
-      max-width: 360px;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
-
     .header {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
     .logo {
       width: 80px;
       height: 47px;
     }
-
-    .nav {
+    .menu {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
-      margin-top: 24px;
-    }
-
-    .nav-button {
-      font-size: 10px;
-      font-weight: 500;
-      padding: 4px 12px;
+      gap: 24px;
+      border-radius: 50px;
       border: 1px solid #422D0E;
-      border-radius: 100px;
       background-color: #F4F3EE;
-      font-family: 'HelveticaNeueCyr', sans-serif;
-      width: 288px;
+      padding: 5px 10px;
       height: 29px;
-      display: flex;
+      font-size: 10px;
       align-items: center;
-      justify-content: center;
+      width: 288px;
+      justify-content: space-around;
     }
-
+    .menu a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
     .termin-button {
       border: 2px solid #422D0E;
+      border-radius: 50px;
+      padding: 5px 10px;
     }
-
     .title {
+      margin-top: 60px;
       font-size: 32px;
       font-weight: 300;
       letter-spacing: 0.42em;
       color: #000000;
-      margin-top: 60px;
-      width: 100%;
-      height: 60px;
-      line-height: 60px;
-      background-color: #F4F3EE;
       border: 1px solid #422D0E;
-      border-radius: 100px;
-      text-align: center;
+      border-radius: 30px;
+      background-color: #F4F3EE;
+      width: fit-content;
+      padding: 10px 20px;
     }
-
-    .image-box {
-      margin: 30px auto 0 auto;
+    .gallery-container {
+      margin-top: 30px;
       width: 311px;
-      height: 361px;
+      height: 61px;
       background-color: #F4F3EE;
       border: 1px solid #422D0E;
       border-radius: 50px;
+      margin-left: auto;
+      margin-right: auto;
       display: flex;
-      align-items: center;
       justify-content: center;
-      box-sizing: border-box;
+      align-items: center;
     }
-
-    .image-box img {
+    .gallery-image {
+      margin-top: 30px;
       width: 213px;
       height: 339px;
-      object-fit: cover;
       border-radius: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
-
-    .controls {
-      margin-top: 30px;
+    .nav-arrows {
       display: flex;
       justify-content: center;
+      align-items: center;
       gap: 37px;
+      margin-top: 30px;
     }
-
-    .circle-button {
+    .arrow-button {
       width: 60px;
       height: 60px;
-      border: 1px solid #000000;
+      border: 1px solid #000;
       border-radius: 50%;
       display: flex;
-      align-items: center;
       justify-content: center;
-      cursor: pointer;
+      align-items: center;
     }
-
-    .circle-button img {
+    .arrow-button img {
       width: 41px;
       height: 41px;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <img src="Logo.png" alt="Logo" class="logo" />
-    </div>
-
-    <!-- Navigation -->
-    <div class="nav">
-      <div class="nav-button">Home</div>
-      <div class="nav-button">Tattoo Stile</div>
-      <div class="nav-button">Galerie</div>
-      <div class="nav-button termin-button">Termin Buchen</div>
-    </div>
-
-    <!-- Title -->
-    <div class="title">Galerie</div>
-
-    <!-- Image Box -->
-    <div class="image-box">
-      <img id="galleryImage" src="Galerie1.png" alt="Tattoo Galerie" />
-    </div>
-
-    <!-- Navigation Buttons -->
-    <div class="controls">
-      <div class="circle-button" onclick="prevImage()">
-        <img src="arrow.png" alt="Zur?ck" />
-      </div>
-      <div class="circle-button" onclick="nextImage()">
-        <img src="right.png" alt="Weiter" />
-      </div>
+  <div class="header">
+    <img src="Logo.png" alt="Logo" class="logo">
+    <div class="menu">
+      <a href="index.html">Home</a>
+      <a href="tattoo-stile.html">Tattoo Stile</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="termin.html" class="termin-button">Termin buchen</a>
     </div>
   </div>
 
-  <!-- JavaScript to switch images -->
+  <div class="title">Galerie</div>
+  <div class="gallery-container">
+    <!-- Это декоративный контейнер -->
+  </div>
+  <img id="galleryImage" class="gallery-image" src="Galerie1.png" alt="Galerie">
+
+  <div class="nav-arrows">
+    <div class="arrow-button" onclick="prevImage()">
+      <img src="arrow.png" alt="arrow left">
+    </div>
+    <div class="arrow-button" onclick="nextImage()">
+      <img src="right.png" alt="arrow right">
+    </div>
+  </div>
+
   <script>
     const galleryImages = [
       "Galerie1.png",
@@ -159,20 +131,20 @@
       "Galerie2.png",
       "Galerie4.png"
     ];
-
-    let currentIndex = 0;
+    let currentImage = 0;
 
     function updateGallery() {
-      document.getElementById("galleryImage").src = galleryImages[currentIndex];
+      const img = document.getElementById("galleryImage");
+      img.src = galleryImages[currentImage];
     }
 
     function nextImage() {
-      currentIndex = (currentIndex + 1) % galleryImages.length;
+      currentImage = (currentImage + 1) % galleryImages.length;
       updateGallery();
     }
 
     function prevImage() {
-      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      currentImage = (currentImage - 1 + galleryImages.length) % galleryImages.length;
       updateGallery();
     }
   </script>
