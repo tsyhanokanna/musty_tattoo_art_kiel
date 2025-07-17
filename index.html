@@ -2,8 +2,9 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Exklusive Tattoo-Kunst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Tattoo Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@400;500&family=Agdasima&display=swap" rel="stylesheet"/>
   <style>
     body {
       margin: 0;
@@ -13,9 +14,10 @@
     }
 
     .container {
-      padding: 24px;
       max-width: 360px;
       margin: 0 auto;
+      padding: 24px;
+      box-sizing: border-box;
     }
 
     .header {
@@ -30,82 +32,94 @@
     }
 
     .nav {
+      margin-top: 24px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 12px;
-      margin-top: 16px;
-      justify-content: flex-end;
+      align-items: flex-end;
     }
 
-    .nav-button {
+    .nav a {
+      text-decoration: none;
       font-size: 10px;
       font-weight: 500;
       padding: 4px 12px;
       border: 1px solid #422D0E;
-      border-radius: 100px;
       background-color: #F4F3EE;
+      border-radius: 100px;
+      width: 288px;
+      height: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
       font-family: 'HelveticaNeueCyr', sans-serif;
     }
 
-    .termin-button {
-      border: 2px solid #422D0E;
-      background-color: #F4F3EE;
+    .nav a.termin {
+      border-width: 2px;
     }
 
-    .main-title {
+    .hero {
       margin-top: 42px;
-      line-height: 1.2;
     }
 
     .exklusive {
+      text-align: right;
       font-family: 'Imbue', serif;
       font-size: 48px;
       font-weight: 500;
-      color: rgba(66, 45, 14, 0.7);
       letter-spacing: 0.26em;
-      text-align: right;
+      color: rgba(66, 45, 14, 0.7);
+      margin-bottom: 21px;
     }
 
     .tattoo-kunst {
+      text-align: left;
       font-size: 48px;
       font-weight: 500;
-      color: rgba(0, 0, 0, 0.8);
       letter-spacing: 0.09em;
-      text-align: left;
+      color: rgba(0, 0, 0, 0.8);
+      line-height: 1;
     }
 
-    .auf-niveau {
+    .auf-hohem {
       display: flex;
       align-items: baseline;
-      gap: 8px;
-      font-size: 48px;
-      margin-top: 4px;
+      gap: 6px;
+      margin-top: 21px;
     }
 
     .auf {
+      font-size: 48px;
       font-weight: 500;
+      letter-spacing: 0.10em;
       color: rgba(0, 0, 0, 0.8);
-      letter-spacing: 0.10em;
+      font-family: 'HelveticaNeueCyr', sans-serif;
     }
 
-    .niveau {
-      font-family: 'Imbue', serif;
+    .hohem {
+      font-size: 48px;
       font-weight: 400;
-      color: rgba(66, 45, 14, 0.7);
       letter-spacing: 0.10em;
+      color: rgba(66, 45, 14, 0.7);
+      font-family: 'Imbue', serif;
     }
 
-    .right-text {
+    .description {
       margin-top: 21px;
       font-size: 16px;
       font-weight: 500;
-      color: rgba(0, 0, 0, 0.6);
       letter-spacing: 0.2em;
       text-align: right;
+      color: rgba(0, 0, 0, 0.6);
     }
 
     .image-section {
       margin-top: 42px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .image-section img {
@@ -115,57 +129,62 @@
 
     .seit {
       font-size: 10px;
-      font-weight: 400;
-      color: rgba(0, 0, 0, 0.6);
       letter-spacing: 0.2em;
-      margin-top: 4px;
+      color: rgba(0, 0, 0, 0.6);
+      font-weight: 400;
+      font-family: 'HelveticaNeueCyr', sans-serif;
+      margin-top: 6px;
     }
 
     .footer-text {
       margin-top: 42px;
       font-size: 24px;
-      font-family: 'Agdasima', sans-serif;
-      color: rgba(0, 0, 0, 0.6);
       letter-spacing: 0.2em;
+      color: rgba(0, 0, 0, 0.6);
+      font-family: 'Agdasima', sans-serif;
     }
-
   </style>
-  <!-- ??????????? ????????????? ??????? (???? ???????????? ???????? ??? ????? Google Fonts) -->
-  <link href="https://fonts.googleapis.com/css2?family=Agdasima&family=Imbue&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
+    <!-- Header -->
     <div class="header">
-      <img src="Logo.png" alt="Logo" class="logo" />
+      <img src="Logo.png" alt="Logo" class="logo"/>
     </div>
 
+    <!-- Navigation -->
     <div class="nav">
-      <div class="nav-button">Home</div>
-      <div class="nav-button">Tattoo Stile</div>
-      <div class="nav-button">Galerie</div>
-      <div class="nav-button termin-button">Termin Buchen</div>
+      <a href="index.html">Home</a>
+      <a href="tattoo-stile.html">Tattoo Stile</a>
+      <a href="galerie.html">Galerie</a>
+      <a href="termin-buchen.html" class="termin">Termin Buchen</a>
     </div>
 
-    <div class="main-title">
+    <!-- Hero Section -->
+    <div class="hero">
       <div class="exklusive">Exklusive</div>
+
       <div class="tattoo-kunst">Tattoo-Kunst</div>
-      <div class="auf-niveau">
+
+      <div class="auf-hohem">
         <div class="auf">auf</div>
-        <div class="niveau">hohem Niveau</div>
+        <div class="hohem">hohem Niveau</div>
+      </div>
+
+      <div class="description">
+        wir schaffen einzigartige Tattoos mit höchster Präzision, Stil und Individualität
       </div>
     </div>
 
-    <div class="right-text">
-      Wir schaffen einzigartige Tattoos mit h?chster Pr?zision, Stil und Individualit?t.
-    </div>
-
+    <!-- Image and Seit -->
     <div class="image-section">
-      <img src="Seite1Bild1.png" alt="Tattoo" />
+      <img src="Seite1Bild1.png" alt="Tattoo Beispiel"/>
       <div class="seit">Seit 2014</div>
     </div>
 
+    <!-- Footer Text -->
     <div class="footer-text">
-      Jede Linie, jede Schattierung ? ein Ausdruck von Stil, Charakter und Seele.
+      Jede Linie, jede Schattierung - ein Ausdruck von Stil, Charakter und Seele
     </div>
   </div>
 </body>
