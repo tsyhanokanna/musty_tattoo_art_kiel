@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tattoo Stile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Imbue&family=Agdasima&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FAFBEA;
+      font-family: 'HelveticaNeueCyr', sans-serif;
+    }
+
+    .container {
+      padding: 24px;
+      max-width: 360px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 47px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    .nav-button {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border: 1px solid #422D0E;
+      border-radius: 100px;
+      background-color: #F4F3EE;
+      font-family: 'HelveticaNeueCyr', sans-serif;
+      width: 288px;
+      height: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .termin-button {
+      border: 2px solid #422D0E;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 0.39em;
+      color: #000000;
+      margin-top: 60px;
+      width: 256px;
+      height: 60px;
+      line-height: 60px;
+      background-color: #F4F3EE;
+      border: 1px solid #422D0E;
+      border-radius: 100px;
+      text-align: center;
+    }
+
+    .style-box {
+      margin-top: 30px;
+      width: 339px;
+      height: 445px;
+      background-color: #F4F3EE;
+      border: 1px solid #422D0E;
+      border-radius: 15px;
+      padding: 16px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .style-title {
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: #422D0E;
+      font-family: 'HelveticaNeueCyr', sans-serif;
+      text-align: center;
+    }
+
+    .underline {
+      width: 305px;
+      height: 4px;
+      background-color: rgba(66, 45, 14, 0.5);
+      margin: 8px 0 12px 0;
+    }
+
+    .style-img {
+      width: 240px;
+      height: 336px;
+      object-fit: cover;
+    }
+
+    .controls {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 37px;
+    }
+
+    .circle-button {
+      width: 60px;
+      height: 60px;
+      border: 1px solid #000000;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .circle-button img {
+      width: 41px;
+      height: 41px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="Logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+      <div class="nav-button">Home</div>
+      <div class="nav-button">Tattoo Stile</div>
+      <div class="nav-button">Galerie</div>
+      <div class="nav-button termin-button">Termin Buchen</div>
+    </div>
+
+    <!-- Title -->
+    <div class="title">Tattoo Stile</div>
+
+    <!-- Style Box -->
+    <div class="style-box">
+      <div class="style-title" id="styleTitle">Line(Fine Line)</div>
+      <div class="underline"></div>
+      <img id="styleImage" class="style-img" src="Linework_tattooStile.png" alt="Tattoo Style" />
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="controls">
+      <div class="circle-button" onclick="prevStyle()">
+        <img src="arrow.png" alt="Prev" />
+      </div>
+      <div class="circle-button" onclick="nextStyle()">
+        <img src="right.png" alt="Next" />
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript for switching styles -->
+  <script>
+    const styles = [
+      {
+        title: "Line(Fine Line)",
+        img: "Linework_tattooStile.png"
+      },
+      {
+        title: "Traditionel",
+        img: "Traditionel_tattoostile.png"
+      },
+      {
+        title: "Dotwork",
+        img: "Dotwork_tattooStile.jpg"
+      },
+      {
+        title: "Black & Gray",
+        img: "Black_tattooStile.jpg"
+      }
+    ];
+
+    let currentIndex = 0;
+
+    function updateStyle() {
+      document.getElementById("styleTitle").textContent = styles[currentIndex].title;
+      document.getElementById("styleImage").src = styles[currentIndex].img;
+    }
+
+    function nextStyle() {
+      currentIndex = (currentIndex + 1) % styles.length;
+      updateStyle();
+    }
+
+    function prevStyle() {
+      currentIndex = (currentIndex - 1 + styles.length) % styles.length;
+      updateStyle();
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termin Buchen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Imbue&family=Agdasima&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FAFBEA;
+      font-family: 'HelveticaNeueCyr', sans-serif;
+    }
+
+    .container {
+      padding: 24px;
+      max-width: 360px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: 47px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 24px;
+    }
+
+    .nav-button {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border: 1px solid #422D0E;
+      border-radius: 100px;
+      background-color: #F4F3EE;
+      font-family: 'HelveticaNeueCyr', sans-serif;
+      width: 288px;
+      height: 29px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .termin-button {
+      border: 2px solid #422D0E;
+    }
+
+    .heading {
+      margin-top: 42px;
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: #000000;
+      line-height: 1.4;
+    }
+
+    .highlight {
+      font-family: 'Imbue', serif;
+      font-weight: 300;
+      letter-spacing: 0.21em;
+      color: rgba(66, 45, 14, 0.7);
+      -webkit-text-stroke: 1px rgba(66, 45, 14, 0.9);
+    }
+
+    .book-btn {
+      margin-top: 30px;
+      width: 237px;
+      height: 59px;
+      border-radius: 30px;
+      border: 3px solid #422D0E;
+      background-color: transparent;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      color: rgba(66, 45, 14, 0.4);
+      -webkit-text-stroke: 2px #422D0E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .info-section {
+      display: none;
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .photo-block {
+      width: 147px;
+      height: 220px;
+      border: 1px solid #422D0E;
+      border-radius: 50px;
+    }
+
+    .contact-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 16px;
+    }
+
+    .folge {
+      font-size: 16px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: #422D0E;
+      border: 1px solid #422D0E;
+      border-radius: 7px;
+      padding: 4px 10px;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .social img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .social span {
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      color: #000000;
+    }
+
+    .address {
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: #000000;
+      margin-top: 10px;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="Logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <!-- Navigation -->
+    <div class="nav">
+      <div class="nav-button">Home</div>
+      <div class="nav-button">Tattoo Stile</div>
+      <div class="nav-button">Galerie</div>
+      <div class="nav-button termin-button">Termin Buchen</div>
+    </div>
+
+    <!-- Heading -->
+    <div class="heading">
+      Lassen Sie Ihre Vision Von Meisterhand Auf Der Haut Verewigen ? 
+      <span class="highlight">Jetzt Termin Sichern</span>
+    </div>
+
+    <!-- Button -->
+    <div class="book-btn" onclick="toggleInfo()">Termin Buchen</div>
+
+    <!-- Info -->
+    <div class="info-section" id="infoSection">
+      <!-- Photo -->
+      <img src="Seite4.png" alt="Tattoo Szene" class="photo-block" />
+
+      <!-- Social and contact -->
+      <div class="contact-section">
+        <div class="folge">Folge uns!</div>
+
+        <div class="social">
+          <img src="Insta.png" alt="Instagram" />
+          <span>Musty_tattoo_art</span>
+        </div>
+
+        <div class="social">
+          <img src="WhatsApp.png" alt="WhatsApp" />
+          <span>016 085 355 20</span>
+        </div>
+
+        <div class="address">
+          Adresse:<br />
+          Oldenburger Stra?e 9<br />
+          24143, Kiel
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleInfo() {
+      const info = document.getElementById('infoSection');
+      info.style.display = info.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
