@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - Tattoo Studio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Imbue:wght@400;500&family=Agdasima&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Studio - Mobile</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,400;10..100,500&display=swap">
   <style>
+    :root {
+      --main-bg: #FAFBEA;
+      --accent: #422D0E;
+      --light-bg: #F4F3EE;
+      --text: #000000;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background-color: #FAFBEA;
+      padding: 10px;
+      background-color: var(--main-bg);
       font-family: 'HelveticaNeueCyr', sans-serif;
-    }
-
-    .container {
-      max-width: 360px;
-      margin: 0 auto;
-      padding: 24px;
-      box-sizing: border-box;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
     .logo {
@@ -31,161 +25,112 @@
       height: 47px;
     }
 
-    .nav {
-      margin-top: 24px;
+    nav {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-bottom: 10px;
     }
 
-    .nav a {
+    nav a {
       text-decoration: none;
       font-size: 10px;
       font-weight: 500;
       padding: 4px 12px;
-      border: 1px solid #422D0E;
-      background-color: #F4F3EE;
-      border-radius: 100px;
-      width: 288px;
-      height: 29px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #000;
+      border: 1px solid var(--accent);
+      background-color: var(--light-bg);
+      border-radius: 20px;
+      color: var(--accent);
       font-family: 'HelveticaNeueCyr', sans-serif;
     }
 
-    .nav a.termin {
-      border-width: 2px;
+    .termin-btn {
+      border: 2px solid var(--accent);
     }
 
-    .hero {
-      margin-top: 42px;
+    .section {
+      margin: 42px 0;
     }
 
-    .exklusive {
+    .headline {
+      font-size: 48px;
+      line-height: 69px;
+      letter-spacing: 9%;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .headline.right {
       text-align: right;
       font-family: 'Imbue', serif;
-      font-size: 48px;
-      font-weight: 500;
-      letter-spacing: 0.26em;
       color: rgba(66, 45, 14, 0.7);
-      margin-bottom: 21px;
+      letter-spacing: 26%;
     }
 
-    .tattoo-kunst {
-      text-align: left;
-      font-size: 48px;
-      font-weight: 500;
-      letter-spacing: 0.09em;
-      color: rgba(0, 0, 0, 0.8);
-      line-height: 1;
-    }
-
-    .auf-hohem {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-      margin-top: 21px;
-    }
-
-    .auf {
-      font-size: 48px;
-      font-weight: 500;
-      letter-spacing: 0.10em;
-      color: rgba(0, 0, 0, 0.8);
-      font-family: 'HelveticaNeueCyr', sans-serif;
-    }
-
-    .hohem {
-      font-size: 48px;
-      font-weight: 400;
-      letter-spacing: 0.10em;
-      color: rgba(66, 45, 14, 0.7);
-      font-family: 'Imbue', serif;
-    }
-
-    .description {
-      margin-top: 21px;
+    .headline.secondary {
       font-size: 16px;
       font-weight: 500;
-      letter-spacing: 0.2em;
-      text-align: right;
+      letter-spacing: 20%;
       color: rgba(0, 0, 0, 0.6);
+      text-align: right;
+      margin-top: 21px;
     }
 
-    .image-section {
-      margin-top: 42px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+    .img-container {
+      margin: 20px 0;
+      text-align: left;
     }
 
-    .image-section img {
+    .img-container img {
       width: 229px;
       height: 153px;
     }
 
-    .seit {
+    .seit2014 {
       font-size: 10px;
-      letter-spacing: 0.2em;
+      letter-spacing: 20%;
       color: rgba(0, 0, 0, 0.6);
-      font-weight: 400;
-      font-family: 'HelveticaNeueCyr', sans-serif;
-      margin-top: 6px;
     }
 
-    .footer-text {
+    .bottom-text {
       margin-top: 42px;
-      font-size: 24px;
-      letter-spacing: 0.2em;
-      color: rgba(0, 0, 0, 0.6);
       font-family: 'Agdasima', sans-serif;
+      font-size: 24px;
+      letter-spacing: 20%;
+      color: rgba(0, 0, 0, 0.6);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Header -->
-    <div class="header">
-      <img src="Logo.png" alt="Logo" class="logo"/>
-    </div>
+  <!-- LOGO -->
+  <img src="Logo.png" alt="Logo" class="logo">
 
-    <!-- Navigation -->
-    <div class="nav">
-      <a href="index.html">Home</a>
-      <a href="tattoo-stile.html">Tattoo Stile</a>
-      <a href="galerie.html">Galerie</a>
-      <a href="termin-buchen.html" class="termin">Termin Buchen</a>
-    </div>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="tattoo-stile.html">tattoo Stile</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="termin.html" class="termin-btn">Termin buchen</a>
+  </nav>
 
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="exklusive">Exklusive</div>
+  <!-- HEADLINES -->
+  <div class="section">
+    <div class="headline right">Exklusive</div>
+    <div class="headline">Tattoo-Kunst</div>
+    <div class="headline">auf <span style="font-family: 'Imbue', serif; color: rgba(66, 45, 14, 0.7); letter-spacing: 10%;">hohem Niveau</span></div>
+    <div class="headline secondary">wir schaffen einzigartige Tattoos mit höchster Präzision, Stil und Individualität</div>
+  </div>
 
-      <div class="tattoo-kunst">Tattoo-Kunst</div>
+  <!-- IMAGE + CAPTION -->
+  <div class="img-container">
+    <img src="Seite1Bild1.png" alt="Tattoo">
+    <div class="seit2014">Seit 2014</div>
+  </div>
 
-      <div class="auf-hohem">
-        <div class="auf">auf</div>
-        <div class="hohem">hohem Niveau</div>
-      </div>
-
-      <div class="description">
-        wir schaffen einzigartige Tattoos mit höchster Präzision, Stil und Individualität
-      </div>
-    </div>
-
-    <!-- Image and Seit -->
-    <div class="image-section">
-      <img src="Seite1Bild1.png" alt="Tattoo Beispiel"/>
-      <div class="seit">Seit 2014</div>
-    </div>
-
-    <!-- Footer Text -->
-    <div class="footer-text">
-      Jede Linie, jede Schattierung - ein Ausdruck von Stil, Charakter und Seele
-    </div>
+  <!-- BOTTOM TEXT -->
+  <div class="bottom-text">
+    Jede Linie, jede Schattierung - ein Ausdruck von Stil, Charakter und Seele
   </div>
 </body>
 </html>
