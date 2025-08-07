@@ -1,183 +1,147 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tattoo Stile</title>
   <style>
     body {
       margin: 10px;
-      padding: 0;
       background-color: #FAFBEA;
       font-family: 'HelveticaNeueCyr', sans-serif;
     }
-
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      width: 100px;
-      height: 90px;
-    }
-
     .menu {
       display: flex;
-      gap: 12px;
+      justify-content: flex-end;
       flex-wrap: wrap;
-      max-width: 288px;
+      gap: 24px;
+      margin-bottom: 60px;
     }
-
     .menu a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 288px;
+      height: 29px;
       font-size: 10px;
       font-weight: 500;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid #422D0E;
-      background-color: #F4F3EE;
       text-decoration: none;
       color: #000;
+      border: 1px solid #422D0E;
+      background-color: #F4F3EE;
     }
-
-    .menu a:last-child {
+    .menu a.termin {
+      border-radius: 15px;
       border-width: 2px;
-      box-sizing: border-box;
     }
-
-    .title-container {
-      margin-top: 60px;
-      display: flex;
-      justify-content: center;
-    }
-
     .title {
+      text-align: center;
       font-size: 24px;
       font-weight: 300;
       letter-spacing: 0.39em;
       color: #000;
       border: 1px solid #422D0E;
-      background-color: #F4F3EE;
+      border-radius: 30px;
       width: 256px;
       height: 60px;
-      border-radius: 30px;
+      background-color: #F4F3EE;
+      margin: 0 auto 30px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
-
-    .card {
-      margin-top: 30px;
+    .square {
       width: 339px;
       height: 445px;
       background-color: #F4F3EE;
       border: 1px solid #422D0E;
       border-radius: 15px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 15px;
+      margin: 0 auto 30px;
+      padding: 15px;
+      box-sizing: border-box;
+      text-align: center;
     }
-
-    .card-title {
+    .square .label {
       font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.2em;
       color: #422D0E;
+      margin-bottom: 5px;
     }
-
-    .divider {
-      margin-top: 10px;
+    .square .line {
       width: 305px;
       height: 4px;
-      background-color: rgba(66, 45, 14, 0.5);
+      background-color: rgba(66,45,14,0.5);
+      margin: 0 auto 10px;
     }
-
-    .tattoo-img {
-      margin-top: 10px;
+    .square img {
       width: 240px;
       height: 336px;
-      object-fit: cover;
+      border-radius: 10px;
     }
-
-    .navigation {
-      margin-top: 30px;
+    .arrows {
       display: flex;
       justify-content: center;
       gap: 37px;
     }
-
-    .nav-circle {
+    .arrow-btn {
       width: 60px;
       height: 60px;
       border: 1px solid #000;
       border-radius: 50%;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       cursor: pointer;
     }
-
-    .nav-circle img {
+    .arrow-btn img {
       width: 41px;
       height: 41px;
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <img src="Logo.png" alt="Logo" class="logo">
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="tattoostile.html">Tattoo Stile</a>
-      <a href="Galerie.html">Galerie</a>
-      <a href="terminbuchen.html">Termin buchen</a>
-    </div>
+  <img src="Logo.png" alt="Logo" width="80" height="47" style="margin-bottom:20px;">
+  <nav class="menu">
+    <a href="home.html">Home</a>
+    <a href="tattoo_stile.html">Tattoo Stile</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="termin_buchen.html" class="termin">Termin Buchen</a>
+  </nav>
+
+  <div class="title">Tattoo Stile</div>
+
+  <div class="square">
+    <div class="label" id="tattoo-label">Linework (Fine Line)</div>
+    <div class="line"></div>
+    <img id="tattoo-image" src="Linework_tattooStile.PNG" alt="Tattoo Stile">
   </div>
 
-  <div class="title-container">
-    <div class="title">Tattoo Stile</div>
-  </div>
-
-  <div class="card">
-    <div class="card-title" id="style-title">Line (Fine Line)</div>
-    <div class="divider"></div>
-    <img src="Linework_tattooStile.png" alt="Tattoo Style" class="tattoo-img" id="style-image">
-  </div>
-
-  <div class="navigation">
-    <div class="nav-circle" onclick="prevStyle()">
-      <img src="arrow.png" alt="Left">
-    </div>
-    <div class="nav-circle" onclick="nextStyle()">
-      <img src="right.png" alt="Right">
-    </div>
+  <div class="arrows">
+    <div class="arrow-btn" onclick="prevImage()"><img src="arrow.png" alt="Left arrow"></div>
+    <div class="arrow-btn" onclick="nextImage()"><img src="right.png" alt="Right arrow"></div>
   </div>
 
   <script>
-    const styles = [
-      { title: 'Line (Fine Line)', image: 'Linework_tattooStile.png' },
-      { title: 'Traditionel', image: 'Traditionel_tattoostile.png' },
-      { title: 'Dotwork', image: 'Dotwork_tattooStile.png' },
-      { title: 'Black & Gray', image: 'Black_tattoostile.png' }
+    const images = [
+      { src: "Linework_tattooStile.PNG", label: "Linework (Fine Line)" },
+      { src: "Traditionel_tattooStile.PNG", label: "Traditionel" },
+      { src: "Dotwork_tattooStile.JPG", label: "Dotwork" },
+      { src: "Black_tattooStile.JPG", label: "Black & Grey" }
     ];
+    let index = 0;
 
-    let current = 0;
-
-    function updateStyle() {
-      document.getElementById('style-title').innerText = styles[current].title;
-      document.getElementById('style-image').src = styles[current].image;
+    function updateImage() {
+      document.getElementById("tattoo-image").src = images[index].src;
+      document.getElementById("tattoo-label").innerText = images[index].label;
     }
-
-    function prevStyle() {
-      current = (current - 1 + styles.length) % styles.length;
-      updateStyle();
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      updateImage();
     }
-
-    function nextStyle() {
-      current = (current + 1) % styles.length;
-      updateStyle();
+    function nextImage() {
+      index = (index + 1) % images.length;
+      updateImage();
     }
   </script>
 </body>
