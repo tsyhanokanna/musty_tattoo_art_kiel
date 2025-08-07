@@ -1,136 +1,138 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tattoo Studio - Mobile</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,400;10..100,500&display=swap">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tattoo Home</title>
   <style>
-    :root {
-      --main-bg: #FAFBEA;
-      --accent: #422D0E;
-      --light-bg: #F4F3EE;
-      --text: #000000;
-    }
-
     body {
-      margin: 0;
-      padding: 10px;
-      background-color: var(--main-bg);
+      margin: 10px;
+      padding: 0;
+      background-color: #FAFBEA;
       font-family: 'HelveticaNeueCyr', sans-serif;
     }
-
-    .logo {
-      width: 80px;
-      height: 47px;
-    }
-
-    nav {
+    .menu {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
       justify-content: flex-end;
-      margin-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 60px;
     }
-
-    nav a {
-      text-decoration: none;
+    .menu a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 288px;
+      height: 29px;
       font-size: 10px;
       font-weight: 500;
-      padding: 4px 12px;
-      border: 1px solid var(--accent);
-      background-color: var(--light-bg);
-      border-radius: 20px;
-      color: var(--accent);
-      font-family: 'HelveticaNeueCyr', sans-serif;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #422D0E;
+      background-color: #F4F3EE;
+      border-radius: 0;
     }
-
-    .termin-btn {
-      border: 2px solid var(--accent);
+    .menu a.termin {
+      border-radius: 15px;
+      border-width: 2px;
     }
-
-    .section {
-      margin: 42px 0;
-    }
-
     .headline {
-      font-size: 48px;
-      line-height: 69px;
-      letter-spacing: 9%;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .headline.right {
       text-align: right;
-      font-family: 'Imbue', serif;
-      color: rgba(66, 45, 14, 0.7);
-      letter-spacing: 26%;
+      margin-bottom: 42px;
     }
-
-    .headline.secondary {
+    .headline .exklusive {
+      font-family: 'Imbue', serif;
+      font-size: 48px;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      color: rgba(66, 45, 14, 0.7);
+      margin-bottom: 21px;
+    }
+    .headline .tattoo-kunst {
+      text-align: left;
+      font-size: 48px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      color: rgba(0, 0, 0, 0.8);
+      margin-bottom: 21px;
+    }
+    .headline .auf-niveau {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 48px;
+      margin-bottom: 21px;
+    }
+    .headline .auf {
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: rgba(0, 0, 0, 0.8);
+    }
+    .headline .niveau {
+      font-family: 'Imbue', serif;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: rgba(66, 45, 14, 0.7);
+    }
+    .description {
+      text-align: right;
       font-size: 16px;
       font-weight: 500;
-      letter-spacing: 20%;
-      color: rgba(0, 0, 0, 0.6);
-      text-align: right;
-      margin-top: 21px;
+      letter-spacing: 0.2em;
+      color: rgba(0,0,0,0.6);
+      margin: 42px 0;
     }
-
-    .img-container {
-      margin: 20px 0;
-      text-align: left;
-    }
-
-    .img-container img {
+    .image-section img {
       width: 229px;
       height: 153px;
+      display: block;
+      margin-bottom: 10px;
     }
-
-    .seit2014 {
+    .seit {
       font-size: 10px;
-      letter-spacing: 20%;
-      color: rgba(0, 0, 0, 0.6);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      color: rgba(0,0,0,0.6);
+      text-align: left;
+      margin-bottom: 42px;
     }
-
-    .bottom-text {
-      margin-top: 42px;
+    .footer-text {
       font-family: 'Agdasima', sans-serif;
       font-size: 24px;
-      letter-spacing: 20%;
-      color: rgba(0, 0, 0, 0.6);
+      letter-spacing: 0.2em;
+      color: rgba(0,0,0,0.6);
+      text-align: left;
     }
   </style>
 </head>
 <body>
-  <!-- LOGO -->
-  <img src="Logo.png" alt="Logo" class="logo">
-
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="tattoostile.html">tattoo Stile</a>
-    <a href="Galerie.html">Galerie</a>
-    <a href="terminbuchen.html" class="termin-btn">Termin buchen</a>
+  <img src="Logo.png" alt="Logo" width="80" height="47" style="margin-bottom:20px;">
+  <nav class="menu">
+    <a href="home.html">Home</a>
+    <a href="tattoo_stile.html">Tattoo Stile</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="termin_buchen.html" class="termin">Termin Buchen</a>
   </nav>
 
-  <!-- HEADLINES -->
-  <div class="section">
-    <div class="headline right">Exklusive</div>
-    <div class="headline">Tattoo-Kunst</div>
-    <div class="headline">auf <span style="font-family: 'Imbue', serif; color: rgba(66, 45, 14, 0.7); letter-spacing: 10%;">hohem Niveau</span></div>
-    <div class="headline secondary">wir schaffen einzigartige Tattoos mit höchster Präzision, Stil und Individualität</div>
+  <div class="headline">
+    <div class="exklusive">Exklusive</div>
+    <div class="tattoo-kunst">Tattoo-Kunst</div>
+    <div class="auf-niveau">
+      <span class="auf">auf</span><span class="niveau">hohem Niveau</span>
+    </div>
   </div>
 
-  <!-- IMAGE + CAPTION -->
-  <div class="img-container">
-    <img src="Seite1Bild1.png" alt="Tattoo">
-    <div class="seit2014">Seit 2014</div>
+  <div class="description">
+    Wir schaffen einzigartige Tattoos mit höchster Präzision, Stil und Individualität.
   </div>
 
-  <!-- BOTTOM TEXT -->
-  <div class="bottom-text">
-    Jede Linie, jede Schattierung - ein Ausdruck von Stil, Charakter und Seele
+  <div class="image-section">
+    <img src="Seite1Bild1.jpg" alt="Tattoo example">
+    <div class="seit">Seit 2014</div>
+  </div>
+
+  <div class="footer-text">
+    Jede Linie, jede Schattierung - ein handgefertigter Ausdruck von Stil, Charakter und Seele.
   </div>
 </body>
 </html>
