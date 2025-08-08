@@ -1,151 +1,125 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tattoo Galerie</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Galerie</title>
   <style>
     body {
       margin: 10px;
       background-color: #FAFBEA;
-      font-family: HelveticaNeueCyr, sans-serif;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      width: 100px;
-      height: 90px;
+      font-family: 'HelveticaNeueCyr', sans-serif;
     }
     .menu {
       display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
       gap: 24px;
-      border-radius: 50px;
-      border: 1px solid #422D0E;
-      background-color: #F4F3EE;
-      padding: 5px 10px;
-      height: 29px;
-      font-size: 10px;
-      align-items: center;
-      width: 288px;
-      justify-content: space-around;
+      margin-bottom: 60px;
     }
     .menu a {
-      text-decoration: none;
-      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 288px;
+      height: 29px;
+      font-size: 10px;
       font-weight: 500;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #422D0E;
+      background-color: #F4F3EE;
     }
-    .termin-button {
-      border: 2px solid #422D0E;
-      border-radius: 50px;
-      padding: 5px 10px;
+    .menu a.termin {
+      border-radius: 15px;
+      border-width: 2px;
     }
     .title {
-      margin-top: 60px;
+      text-align: center;
       font-size: 32px;
       font-weight: 300;
       letter-spacing: 0.42em;
-      color: #000000;
+      color: #000;
       border: 1px solid #422D0E;
       border-radius: 30px;
       background-color: #F4F3EE;
-      width: fit-content;
-      padding: 10px 20px;
+      width: 256px;
+      height: 60px;
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    .gallery-container {
-      margin-top: 30px;
+    .image-wrapper {
       width: 311px;
-      height: 300px;
+      height: 361px;
       background-color: #F4F3EE;
       border: 1px solid #422D0E;
       border-radius: 50px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 30px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
-    .gallery-image {
-      margin-top: 30px;
+    .image-wrapper img {
       width: 213px;
       height: 339px;
       border-radius: 20px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .nav-arrows {
+    .arrows {
       display: flex;
       justify-content: center;
-      align-items: center;
       gap: 37px;
-      margin-top: 30px;
     }
-    .arrow-button {
+    .arrow-btn {
       width: 60px;
       height: 60px;
       border: 1px solid #000;
       border-radius: 50%;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
-    .arrow-button img {
+    .arrow-btn img {
       width: 41px;
       height: 41px;
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <img src="Logo.png" alt="Logo" class="logo">
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="tattoostile.html">Tattoo Stile</a>
-      <a href="Galerie.html">Galerie</a>
-      <a href="terminbuchen.html" class="termin-button">Termin buchen</a>
-    </div>
-  </div>
+  <img src="Logo.png" alt="Logo" width="80" height="47" style="margin-bottom:20px;">
+  <nav class="menu">
+    <a href="index.html">Home</a>
+    <a href="tattoostile.html">Tattoo Stile</a>
+    <a href="Galerie.html">Galerie</a>
+    <a href="terminbuchen.html" class="termin">Termin Buchen</a>
+  </nav>
 
   <div class="title">Galerie</div>
-  <div class="gallery-container">
-    <!-- Это декоративный контейнер -->
-  </div>
-  <img id="galleryImage" class="gallery-image" src="Galerie1.PNG" alt="Galerie">
 
-  <div class="nav-arrows">
-    <div class="arrow-button" onclick="prevImage()">
-      <img src="arrow.png" alt="arrow left">
-    </div>
-    <div class="arrow-button" onclick="nextImage()">
-      <img src="right.png" alt="arrow right">
-    </div>
+  <div class="image-wrapper">
+    <img id="gallery-image" src="Galerie1.PNG" alt="Galerie">
+  </div>
+
+  <div class="arrows">
+    <div class="arrow-btn" onclick="prevImage()"><img src="arrow.png" alt="Left arrow"></div>
+    <div class="arrow-btn" onclick="nextImage()"><img src="right.png" alt="Right arrow"></div>
   </div>
 
   <script>
-    const galleryImages = [
-      "Galerie1.PNG",
-      "Galerie3.PNG",
-      "Galerie2.png",
-      "Galerie4.PNG"
-    ];
-    let currentImage = 0;
-
-    function updateGallery() {
-      const img = document.getElementById("galleryImage");
-      img.src = galleryImages[currentImage];
+    const images = ["Galerie1.PNG", "Galerie3.PNG", "Galerie2.PNG", "Galerie4.PNG"];
+    let index = 0;
+    function updateImage() {
+      document.getElementById("gallery-image").src = images[index];
     }
-
-    function nextImage() {
-      currentImage = (currentImage + 1) % galleryImages.length;
-      updateGallery();
-    }
-
     function prevImage() {
-      currentImage = (currentImage - 1 + galleryImages.length) % galleryImages.length;
-      updateGallery();
+      index = (index - 1 + images.length) % images.length;
+      updateImage();
+    }
+    function nextImage() {
+      index = (index + 1) % images.length;
+      updateImage();
     }
   </script>
 </body>
